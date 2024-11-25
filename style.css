@@ -1,46 +1,102 @@
 /* 기본 스타일 */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f0f0;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #333;
+    background-color: #1e2a38;
     color: white;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
 header nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 header nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: inline-block;
+    margin: 0 20px;
 }
 
 header nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ff8c00;
 }
 
 /* 섹션 스타일 */
-section {
-    padding: 20px;
+.content-section {
+    padding: 40px;
     margin: 20px 0;
     background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* 글 목록 */
+#posts ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#posts ul li {
+    margin-bottom: 10px;
+}
+
+#posts ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    padding: 10px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+#posts ul li a:hover {
+    background-color: #f0f0f0;
+    color: #1e2a38;
 }
 
 /* 푸터 스타일 */
 footer {
     text-align: center;
-    padding: 10px;
-    background-color: #333;
+    padding: 15px;
+    background-color: #1e2a38;
     color: white;
+    margin-top: 40px;
+    font-size: 1rem;
 }
 
 /* 반응형 디자인 적용 (미디어 쿼리) */
@@ -52,11 +108,10 @@ footer {
     }
 
     header h1 {
-        font-size: 24px;
+        font-size: 2rem;
     }
 
     header nav ul {
-        padding: 0;
         text-align: center;
     }
 
@@ -65,9 +120,8 @@ footer {
         margin: 10px 0;
     }
 
-    section {
-        padding: 15px;
-        margin: 10px 0;
+    .content-section {
+        padding: 25px;
     }
 
     footer {
@@ -78,12 +132,11 @@ footer {
 /* 화면 크기가 480px 이하일 경우 (모바일) */
 @media screen and (max-width: 480px) {
     header h1 {
-        font-size: 20px;
+        font-size: 1.5rem;
     }
 
-    section {
-        padding: 10px;
-        margin: 10px 0;
+    .content-section {
+        padding: 20px;
     }
 
     footer {
@@ -99,11 +152,11 @@ footer {
     }
 
     header h1 {
-        font-size: 36px;
+        font-size: 3rem;
     }
 
-    section {
-        padding: 30px;
+    .content-section {
+        padding: 40px;
     }
 
     footer {
