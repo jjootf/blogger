@@ -58,6 +58,53 @@ button#theme-toggle:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.guestbook-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.guestbook-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.guestbook-form button {
+    align-self: flex-start;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.guestbook-form button:hover {
+    background-color: #0056b3;
+}
+
+#guestbook-messages {
+    margin-top: 20px;
+}
+
+#messages-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#messages-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+
 footer {
     text-align: center;
     background-color: #1e2a38;
