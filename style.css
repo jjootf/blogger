@@ -5,7 +5,7 @@ body {
     padding: 0;
     background-color: #f7f7f7;
     line-height: 1.6;
-    font-size: 1rem; /* 기본 글꼴 크기 */
+    font-size: 1rem;
     color: #333;
 }
 
@@ -14,17 +14,10 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
     font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-header h1 a {
-    text-decoration: none;
-    color: white;
 }
 
 header nav ul {
@@ -35,23 +28,28 @@ header nav ul {
 
 header nav ul li {
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 header nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
 }
 
-header nav ul li a:hover {
-    color: #ff8c00;
+button#theme-toggle {
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-/* 섹션 스타일 */
+button#theme-toggle:hover {
+    background-color: #ffcc00;
+}
+
 .content-section {
     padding: 40px;
     margin: 20px 0;
@@ -60,126 +58,28 @@ header nav ul li a:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.content-section h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.content-section p {
-    font-size: 1.1rem;
-    color: #666;
-}
-
-.content-section a {
-    color: #0077cc;
-    text-decoration: none;
-}
-
-.content-section a:hover {
-    color: #005fa3;
-}
-
-/* 글 목록 */
-#posts ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#posts ul li {
-    margin-bottom: 15px;
-}
-
-#posts ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1.2rem;
-    padding: 10px;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-    border-radius: 4px;
-}
-
-#posts ul li a:hover {
-    background-color: #f0f0f0;
-    color: #1e2a38;
-}
-
-/* 푸터 스타일 */
 footer {
     text-align: center;
     background-color: #1e2a38;
     color: white;
-    margin-top: 40px;
-    font-size: 1rem;
-    padding: 15px;
+    padding: 20px;
 }
 
-footer a {
-    color: #ff8c00;
+/* 다크 모드 */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
-footer a:hover {
+body.dark-mode header {
+    background-color: #333;
+}
+
+body.dark-mode footer {
+    background-color: #333;
+}
+
+body.dark-mode button#theme-toggle {
+    background-color: #444;
     color: #ffcc00;
-}
-
-/* 반응형 디자인 적용 (미디어 쿼리) */
-@media screen and (max-width: 768px) {
-    header {
-        padding: 15px;
-    }
-
-    header h1 {
-        font-size: 2rem;
-    }
-
-    header nav ul {
-        text-align: center;
-    }
-
-    header nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .content-section {
-        padding: 25px;
-    }
-
-    footer {
-        padding: 15px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    .content-section {
-        padding: 20px;
-    }
-
-    footer {
-        padding: 10px;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    body {
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    header h1 {
-        font-size: 3rem;
-    }
-
-    .content-section {
-        padding: 40px;
-    }
-
-    footer {
-        padding: 20px;
-    }
 }
