@@ -52,3 +52,31 @@ function saveMessageToLocalStorage(message) {
     messages.push(message);
     localStorage.setItem('guestbookMessages', JSON.stringify(messages));
 }
+
+// 메시지를 DOM에 추가 (삭제 버튼 포함)
+function addMessageToDOM(message) {
+    const li = document.createElement('li');
+    li.textContent = message;
+
+    // 삭제 버튼 생성
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = '삭제';
+    deleteButton.addEventListener('click', () => {
+        removeMessageFromDOM(li, message);
+    });
+
+    // 삭제 버튼을 리스트 항목에 추가
+    li.appendChild(deleteButton);
+    messagesList.appendChild(li);
+}
+
+// 메시지를 DOM 및 로컬 스토리지에서 삭제
+function removeMessageFromDOM(listItem, message) {
+    // DOM에서 삭제
+    listItem.remove();
+
+    // 로컬 스토리지에서 삭제
+    let messages = JSON.parse(localStorage.getItem('guestbookMessages')) || [];
+    messages = messages.filter(m => m !== message); // 메시지 필터링
+    localStorage.setItem('guestbookMessages', JSON.stringify(messages));
+}
