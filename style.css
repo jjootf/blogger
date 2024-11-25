@@ -1,3 +1,4 @@
+/* 기본 스타일 */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -27,15 +28,85 @@ header nav ul li a {
     text-decoration: none;
 }
 
+/* 섹션 스타일 */
 section {
     padding: 20px;
     margin: 20px 0;
     background-color: white;
 }
 
+/* 푸터 스타일 */
 footer {
     text-align: center;
     padding: 10px;
     background-color: #333;
     color: white;
+}
+
+/* 반응형 디자인 적용 (미디어 쿼리) */
+
+/* 화면 크기가 768px 이하일 경우 (태블릿 및 모바일) */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    header nav ul {
+        padding: 0;
+        text-align: center;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 15px;
+        margin: 10px 0;
+    }
+
+    footer {
+        padding: 15px;
+    }
+}
+
+/* 화면 크기가 480px 이하일 경우 (모바일) */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    section {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    footer {
+        padding: 10px;
+    }
+}
+
+/* 화면 크기가 1024px 이상일 경우 (데스크톱) */
+@media screen and (min-width: 1024px) {
+    body {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    header h1 {
+        font-size: 36px;
+    }
+
+    section {
+        padding: 30px;
+    }
+
+    footer {
+        padding: 20px;
+    }
 }
