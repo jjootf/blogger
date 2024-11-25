@@ -18,3 +18,37 @@ document.addEventListener("DOMContentLoaded", () => {
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
 })();
+
+const form = document.getElementById('guestbook-form');
+const messagesList = document.getElementById('messages-list');
+
+// 메시지 로드
+document.addEventListener('DOMContentLoaded', () => {
+    const savedMessages = JSON.parse(localStorage.getItem('guestbookMessages')) || [];
+    savedMessages.forEach(message => addMessageToDOM(message));
+});
+
+// 폼 제출 이벤트 처리
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const message = event.target.message.value.trim();
+    if (message) {
+        addMessageToDOM(message);
+        saveMessageToLocalStorage(message);
+        event.target.reset();
+    }
+});
+
+// 메시지를 DOM에 추가
+function addMessageToDOM(message) {
+    const li = document.createElement('li');
+    li.textContent = message;
+    messagesList.appendChild(li);
+}
+
+// 메시지를 로컬 스토리지에 저장
+function saveMessageToLocalStorage(message) {
+    const messages = JSON.parse(localStorage.getItem('guestbookMessages')) || [];
+    messages.push(message);
+    localStorage.setItem('guestbookMessages', JSON.stringify(messages));
+}
